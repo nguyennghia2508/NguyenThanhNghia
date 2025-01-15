@@ -52,9 +52,3 @@ function sum_to_n_c(n: number): number {
     if (n <= 1) return n;
     return n + sum_to_n_c(n - 1);
 }
-
-// Testing the functions
-const testValue = 5;
-console.log(`sum_to_n_a(${testValue}):`, sum_to_n_a(testValue)); // Output: 15
-console.log(`sum_to_n_b(${testValue}):`, sum_to_n_b(testValue)); // Output: 15
-console.log(`sum_to_n_c(${testValue}):`, sum_to_n_c(testValue)); // Output: 15
