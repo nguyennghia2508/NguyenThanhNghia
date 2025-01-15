@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "dev": "ts-node src/app.ts",
+    "dev": "nodemon --exec ts-node src/app.ts",
     "start": "npm run build && node dist/app.js",
     "start:dev": "ts-node app.ts",
     "build": "tsc"
