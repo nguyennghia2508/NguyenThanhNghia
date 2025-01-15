@@ -3,7 +3,7 @@
 
 This is a simple CRUD backend server built using ExpressJS and TypeScript, with MongoDB as the database. It includes validation for user input using Joi.
 
-# Table of Contents
+## Table of Contents
 
 1. [Project Structure](#project-structure)
 2. [Features](#features)
