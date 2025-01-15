@@ -3,6 +3,61 @@
 
 This is a simple CRUD backend server built using ExpressJS and TypeScript, with MongoDB as the database. It includes validation for user input using Joi.
 
+# Table of Contents
+
+1. [Project Structure](#project-structure)
+2. [Features](#features)
+3. [Setup Instructions](#setup-instructions)
+   - [Clone the Repository](#clone-the-repository)
+   - [Install Dependencies](#install-dependencies)
+   - [Setup MongoDB](#setup-mongodb)
+   - [Configure Environment Variables](#configure-environment-variables)
+   - [Run the Server](#run-the-server)
+4. [Endpoints](#endpoints)
+5. [Development Scripts](#development-scripts)
+6. [Validation](#validation)
+7. [Error Handling](#error-handling)
+8. [Dependencies](#dependencies)
+9. [Example API Usage](#example-api-usage)
+   - [Create a User (POST /api/users)](#create-a-user-post-apiousers)
+   - [Get All Users (GET /api/users)](#get-all-users-get-apiousers)
+   - [Update a User (PUT /api/users:id)](#update-a-user-put-apiousersid)
+   - [Delete a User (DELETE /api/users:id)](#delete-a-user-delete-apiousersid)
+10. [Troubleshooting](#troubleshooting)
+   - [MongoDB Connection Error](#mongodb-connection-error)
+   - [Validation Errors](#validation-errors)
+   - [500 Server Errors](#500-server-errors)
+
+## Project Structure
+
+```plaintext
+crude-server/
+├── src/
+│   ├── app.ts                # Express app initialization
+│   ├── db/
+│   │   └── connection.ts     # MongoDB connection setup
+│   ├── routes/
+│   │   └── user.routes.ts    # Routes for user CRUD
+│   ├── controllers/
+│   │   └── user.controller.ts # User CRUD logic
+│   ├── models/
+│   │   └── user.model.ts     # Mongoose schema and model
+│   ├── services/
+│   │   └── user.service.ts   # User service for handling CRUD operations
+│   ├── validate/
+│   │   └── user.validation.ts # Validation schema for user
+├── package.json
+├── tsconfig.json
+└── README.md
+```
+## Features
+
+- **Create a User:** Allows users to add a new user with a name, email, and optional age.
+- **Get All Users:** Fetches a list of all users.
+- **Get User By ID:** Fetches a user by their unique ID.
+- **Update User:** Allows updating a user's details (name, email, age).
+- **Delete User:** Allows deleting a user by their ID.
+
 ## Setup Instructions
 
 1. Clone the repository:
@@ -83,10 +138,7 @@ This server uses Joi for validating user input:
    Response:
    ```json
    {
-     "_id": "60f8c8d9e4b0e84cda6479a2",
-     "name": "John Doe",
-     "email": "john.doe@example.com",
-     "age": 30
+      "message": "User created successfully"
    }
    ```
 
@@ -120,10 +172,13 @@ This server uses Joi for validating user input:
    Response:
    ```json
    {
-     "_id": "60f8c8d9e4b0e84cda6479a2",
-     "name": "John Smith",
-     "email": "john.doe@example.com",
-     "age": 30
+     "message": "User created successfully",
+     "updatedUser": {
+         "_id": "60f8c8d9e4b0e84cda6479a2",
+         "name": "John Smith",
+         "email": "john.doe@example.com",
+         "age": 30
+     }
    }
    ```
 
@@ -145,9 +200,3 @@ This server uses Joi for validating user input:
 
 3. **500 Server Errors**: 
    Check server logs for more detailed error messages, which might point to issues with database queries or unexpected bugs in the code.
-
----
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
