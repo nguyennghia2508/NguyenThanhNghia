@@ -193,7 +193,7 @@ This server uses Joi for validating user input:
 ## Troubleshooting
 
 1. **MongoDB Connection Error**: 
-   Ensure that your MongoDB server is running and accessible. You can verify the connection in the `database.ts` file by checking the `MONGO_URI` variable.
+   Ensure that your MongoDB server is running and accessible. You can verify the connection in the `connection.ts` file by checking the `MONGO_URI` variable.
 
 2. **Validation Errors**: 
    If you're getting validation errors, double-check that the request body follows the required structure (e.g., correct types for `name`, `email`, and `age`).
