@@ -172,7 +172,7 @@ This server uses Joi for validating user input:
    Response:
    ```json
    {
-     "message": "User created successfully",
+     "message": "User updated successfully",
      "updatedUser": {
          "_id": "60f8c8d9e4b0e84cda6479a2",
          "name": "John Smith",
